@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Química en los labios | Expotec 2026, CET N.º 12</title>
+<meta name="description" content="Un labial y un gloss elaborados en el laboratorio del CET N.º 12: fórmulas, ingredientes, proceso y ensayos del proyecto Química en los labios.">
+<meta property="og:title" content="Química en los labios">
+<meta property="og:description" content="Un labial y un gloss hechos en el laboratorio del CET N.º 12, de la fórmula al envase.">
+<meta property="og:image" content="https://exequielreidel.github.io/Qu-mica-en-los-labios/img/terminados.jpg">
+<link rel="icon" type="image/png" href="img/icono.png">
+<link rel="apple-touch-icon" href="img/icono.png">
+<meta name="theme-color" content="#2B1220">
+<style>
+@font-face{font-family:"Bricolage Grotesque";src:url(fonts/bricolage.woff2) format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(fonts/instrument.woff2) format("woff2");font-weight:400 700;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(fonts/instrument-italic.woff2) format("woff2");font-weight:400 700;font-style:italic;font-display:swap}
+:root{
+  --blush:#FFF4F1;
+  --paper:#FFFFFF;
+  --plum:#2E1519;
+  --plum-soft:#5A3F4C;
+  --coral:#D9665F;
+  --rose:#B9776A;
+  --coral-pale:#FBD9D3;
+  --amber:#F2A03D;
+  --navy:#1F3A63;
+  --line:#EBCFC9;
+  --display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wrap:68rem;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--blush);color:var(--plum);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.02;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(2.1rem,7vw,3.6rem);font-weight:800;max-width:16ch}
+h3{font-size:1.35rem;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:4px}
+sub{font-size:.7em;line-height:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 1.25rem}
+.band{padding:4.5rem 0}
+.band-paper{background:var(--paper)}
+.band-plum{background:var(--plum);color:var(--blush)}
+.lead{font-size:1.2rem;line-height:1.5;max-width:54ch}
+.head{margin-bottom:2.25rem}
+.head p{margin-top:1rem;color:var(--plum-soft)}
+.band-plum .head p{color:#E7CFD3}
+
+/* Cabecera */
+.top{position:sticky;top:0;z-index:5;background:rgba(255,244,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:1rem;min-height:3.25rem}
+.brand{font-family:var(--display);font-weight:800;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:.5rem;flex:none}
+.brand img{width:2rem;height:2rem}
+.top nav{min-width:0;display:flex;gap:1.1rem;overflow-x:auto;margin-left:auto;scrollbar-width:none;font-size:.95rem}
+.top nav::-webkit-scrollbar{display:none}
+.top nav a{text-decoration:none;white-space:nowrap;padding:.9rem 0;color:var(--plum-soft)}
+.top nav a:hover{color:var(--coral)}
+
+/* Portada */
+.hero{padding:2.5rem 0 5rem;overflow:hidden}
+.hero .wrap{display:grid;gap:2rem}
+.hero h1{font-size:clamp(3.4rem,17vw,9.5rem);font-weight:800;letter-spacing:-.045em;line-height:.86}
+.hero h1 span{display:block}
+.hero h1 .en{font-weight:400;font-size:.42em;letter-spacing:-.02em;line-height:1.1;color:var(--coral)}
+.hero .lead{margin-top:1.5rem}
+.facts{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;gap:.35rem;font-size:.98rem;color:var(--plum-soft)}
+.facts b{color:var(--plum);font-weight:600}
+.bullet{position:relative;justify-self:center;width:min(78vw,22rem)}
+.bullet img{width:100%;aspect-ratio:3/4.4;object-fit:cover;object-position:50% 78%;border-radius:999px 999px 1.25rem 1.25rem;transform:rotate(3deg)}
+.bullet .seal{position:absolute;left:-9%;bottom:-7%;width:46%;aspect-ratio:1;border-radius:50%;transform:rotate(-8deg);animation:none;box-shadow:0 0 0 5px var(--blush)}
+.bullet::before{content:"";position:absolute;inset:6% -7% -4% 9%;background:var(--coral);border-radius:999px 999px 1.25rem 1.25rem;transform:rotate(-4deg);z-index:-1}
+@media (prefers-reduced-motion:no-preference){
+  .bullet img:not(.seal){animation:giro .9s cubic-bezier(.2,.8,.2,1) both}
+  .bullet .seal{position:absolute;left:-9%;bottom:-7%;width:46%;aspect-ratio:1;border-radius:50%;transform:rotate(-8deg);animation:none;box-shadow:0 0 0 5px var(--blush)}
+.bullet::before{animation:giro2 .9s .08s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes giro{from{transform:translateY(3rem) rotate(-6deg);opacity:0}to{transform:rotate(3deg);opacity:1}}
+  @keyframes giro2{from{transform:translateY(3rem) rotate(6deg);opacity:0}to{transform:rotate(-4deg);opacity:1}}
+}
+
+/* Objetivos */
+.goals{list-style:none;padding:0;margin:2rem 0 0;display:grid;gap:0;border-top:2px solid var(--plum)}
+.goals li{padding:1rem 0;border-bottom:1px solid var(--line);max-width:none}
+
+/* Fórmulas */
+.formulas{display:grid;gap:1.5rem}
+.formula{background:var(--blush);border-radius:1.5rem;padding:1.5rem 1.25rem 1.25rem}
+.formula h3{font-size:2rem;font-weight:800;letter-spacing:-.03em}
+.formula .sub{color:var(--plum-soft);margin:.35rem 0 1.25rem}
+.bar{display:flex;height:3.25rem;border-radius:.75rem;overflow:hidden;gap:2px;background:var(--paper)}
+.bar i{display:block;min-width:7px}
+.tbl{width:100%;border-collapse:collapse;margin-top:1.1rem;font-size:.97rem;font-variant-numeric:tabular-nums}
+.tbl th{font-weight:500;color:var(--plum-soft);text-align:right;padding:.4rem 0 .5rem .5rem;font-size:.85rem;vertical-align:bottom}
+.tbl th:first-child,.tbl td:first-child{text-align:left;padding-left:0}
+.tbl td{padding:.55rem 0 .55rem .5rem;border-top:1px solid var(--line);text-align:right}
+.tbl tfoot td{font-weight:600;border-top:2px solid var(--plum)}
+.dot{display:inline-block;width:.75rem;height:.75rem;border-radius:50%;margin-right:.5rem;vertical-align:-.02em}
+.note{font-size:.93rem;color:var(--plum-soft);margin-top:1.25rem;max-width:70ch}
+
+/* Ingredientes */
+.ings{border-top:2px solid var(--plum)}
+.ings details{border-bottom:1px solid var(--line)}
+.ings summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:.25rem 1rem;align-items:center;padding:1.1rem 0}
+.ings summary::-webkit-details-marker{display:none}
+.ings summary h3{grid-column:1}
+.ings summary .role{grid-column:1;color:var(--plum-soft);font-size:.98rem}
+.ings summary::after{content:"+";grid-column:2;grid-row:1/3;font-family:var(--display);font-size:1.9rem;line-height:1;color:var(--coral);transition:transform .2s}
+.ings details[open] summary::after{transform:rotate(45deg)}
+.ings .body{padding:0 0 1.4rem}
+.chem{display:inline-block;font-family:var(--display);font-weight:600;font-size:1.15rem;background:var(--coral-pale);padding:.3rem .7rem;border-radius:.5rem;margin:0 0 1rem;overflow-wrap:anywhere}
+.used{font-size:.9rem;color:var(--plum-soft)}
+
+/* Proceso */
+.steps{list-style:none;margin:0;padding:0;counter-reset:paso;display:grid;gap:3rem}
+.steps > li{counter-increment:paso;display:grid;gap:1rem}
+.steps h3{font-size:1.6rem;font-weight:800;letter-spacing:-.02em}
+.steps h3::before{content:counter(paso);display:block;font-size:3.5rem;line-height:.9;color:var(--coral);margin-bottom:.35rem}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:.6rem}
+figure{margin:0}
+figure img{border-radius:1rem;aspect-ratio:3/4;object-fit:cover;width:100%}
+figcaption{font-size:.88rem;color:var(--plum-soft);margin-top:.4rem}
+.band-plum figcaption{color:#E7CFD3}
+
+/* Ensayos */
+.ph{margin:0 0 3rem}
+.ph-scale{position:relative;padding:3.6rem 0 3.4rem}
+.ph-strip{display:grid;grid-template-columns:repeat(14,1fr);gap:2px;border-radius:.6rem;overflow:hidden}
+.ph-strip i{display:grid;place-items:center;height:2.9rem;font-style:normal;font-size:.8rem;font-weight:600;color:#fff}
+.ph-strip i.d{color:var(--plum)}
+.mark{position:absolute;transform:translateX(-50%);text-align:center;font-size:.9rem;line-height:1.2;white-space:nowrap}
+.mark b{display:block;font-family:var(--display);font-size:1.25rem}
+.mark.up{top:0}
+.mark.up::after{content:"";display:block;width:2px;height:.7rem;background:currentColor;margin:.25rem auto 0}
+.skin{position:absolute;bottom:0;left:28.57%;width:7.143%;text-align:center;font-size:.86rem;line-height:1.2}
+.skin::before{content:"";display:block;height:.55rem;border:2px solid currentColor;border-top:0;margin-bottom:.3rem}
+.skin span{display:block;width:10rem;margin-left:50%;transform:translateX(-50%)}
+.results{display:grid;gap:1.25rem;margin-bottom:3rem}
+.res{border-top:2px solid var(--coral);padding-top:1rem}
+.res .big{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,11vw,4rem);line-height:1;letter-spacing:-.03em;margin-bottom:.4rem}
+.res p{color:#E7CFD3;font-size:1rem}
+
+/* Aprendizajes */
+.turns{display:grid;gap:1.25rem}
+.turn{background:var(--paper);border-radius:1.25rem;padding:1.5rem 1.25rem;border-left:6px solid var(--coral)}
+.turn:nth-child(2){border-color:var(--amber)}
+.turn:nth-child(3){border-color:var(--navy)}
+.turn h3{margin-bottom:.6rem}
+.turn p:last-child{margin-bottom:0}
+.turn .fix{font-weight:600}
+
+/* Normativa */
+.reqs{list-style:none;padding:0;margin:2rem 0 0;display:grid;gap:1.25rem}
+.reqs li{padding-left:1rem;border-left:3px solid var(--coral-pale)}
+.reqs b{display:block;font-family:var(--display);font-size:1.15rem;font-weight:600}
+
+/* Equipo */
+.people{display:grid;gap:2rem}
+.people ul{list-style:none;padding:0;margin:.75rem 0 0;font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.25;letter-spacing:-.01em}
+.people .tut ul{font-size:1.15rem;font-weight:400}
+.people h3{font-family:var(--body);font-size:1rem;font-weight:500;color:var(--plum-soft);letter-spacing:0}
+.refs{margin:3rem 0 0;padding:1.5rem 0 0;border-top:1px solid var(--line);font-size:.93rem;color:var(--plum-soft)}
+.refs ul{padding-left:1.1rem;margin:.5rem 0 0}
+.refs li{margin-bottom:.4rem;overflow-wrap:anywhere}
+footer{background:var(--plum);color:#E7CFD3;padding:2rem 0;font-size:.93rem}
+footer p{margin:0}
+
+@media (max-width:30rem){.brand span{display:none}}
+@media (min-width:48rem){
+  body{font-size:1.125rem}
+  .band{padding:7rem 0}
+  .hero{padding:4rem 0 6rem}
+  .hero .wrap{grid-template-columns:1.25fr .75fr;align-items:center;gap:3rem}
+  .goals{grid-template-columns:1fr 1fr;column-gap:3rem}
+  .formulas{grid-template-columns:1fr 1fr}
+  .formula{padding:2rem}
+  .steps > li{grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+  .results{grid-template-columns:repeat(3,1fr);gap:2rem}
+  .turns{grid-template-columns:repeat(3,1fr)}
+  .reqs{grid-template-columns:1fr 1fr;gap:2rem 3rem}
+  .people{grid-template-columns:1fr 1fr}
+  .ph-strip i{height:3.6rem;font-size:.95rem}
+}
+@media print{.top{display:none}.band{padding:2rem 0}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><img src="img/icono.png" width="32" height="32" alt=""><span>Química en los labios</span></a>
+    <nav aria-label="Secciones">
+      <a href="#formulas">Fórmulas</a>
+      <a href="#ingredientes">Ingredientes</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#ensayos">Ensayos</a>
+      <a href="#equipo">Equipo</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1><span>Química</span><span class="en">en los</span><span>labios</span></h1>
+      <p class="lead">Un labial y un gloss hechos en el laboratorio de la escuela, de la fórmula al envase. Esta página cuenta qué lleva cada uno, cómo los elaboramos y qué medimos.</p>
+      <ul class="facts">
+        <li><b>Expotec 2026</b>, 19 de noviembre</li>
+        <li><b>CET N.º 12</b>, Centro de Educación Técnica</li>
+        <li>Curso <b>2.º I C.S.Q. T.T.</b></li>
+      </ul>
+    </div>
+    <div class="bullet">
+      <img src="img/terminados.jpg" width="900" height="1200" alt="Veinte labiales y veinte glosses terminados, alineados sobre la mesada del laboratorio">
+      <img class="seal" src="img/logo.png" width="640" height="640" alt="Logo del proyecto: Química en los labios, 2 I CSQ">
+    </div>
+  </div>
+</section>
+
+<section class="band band-paper" id="proyecto">
+  <div class="wrap">
+    <div class="head">
+      <h2>Por qué un labial</h2>
+    </div>
+    <p class="lead">Elegimos la cosmética para juntar en un solo trabajo lo que vimos en las materias de laboratorio y comprobar la teoría con las manos.</p>
+    <p>Proteger y dar color a los labios es una práctica antigua: en Mesopotamia y Egipto, hacia el 3500 a. C., ya se usaban ceras naturales, arcillas y pigmentos de plantas y minerales contra el sol y el viento seco. A fines del siglo XIX apareció la primera barra sólida moderna, a base de cera de abeja y aceites. Nuestro labial sigue esa misma lógica.</p>
+    <ul class="goals">
+      <li>Desarrollar un labial y un gloss a pequeña escala, aptos para el contacto con la piel.</li>
+      <li>Reconocer las propiedades físicas de cada uno, como la textura, y en qué se diferencian.</li>
+      <li>Medir el pH de los productos y compararlo con el de la piel.</li>
+      <li>Conocer cada ingrediente: si es orgánico o inorgánico y qué función cumple.</li>
+      <li>Imitar en el laboratorio el proceso de fabricación industrial.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band band-paper" id="formulas" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <h2>Dos productos, dos fórmulas</h2>
+      <p>El labial tiene que mantenerse sólido en el envase y el gloss tiene que fluir. La diferencia está en cuánta cera lleva cada uno.</p>
+    </div>
+    <div class="formulas">
+      <article class="formula" id="f-labial"></article>
+      <article class="formula" id="f-gloss"></article>
+    </div>
+    <p class="note">Preparamos más masa de la que entra en los envases (20 % de más en el labial y 25 % en el gloss) porque la cera y la vaselina quedan adheridas al vaso. Cada cantidad sale de una regla de tres: masa del ingrediente = porcentaje × masa total ÷ 100.</p>
+  </div>
+</section>
+
+<section class="band" id="ingredientes">
+  <div class="wrap">
+    <div class="head">
+      <h2>Qué hace cada ingrediente</h2>
+      <p>Todos son compuestos orgánicos apolares: tienen cadenas largas de carbono e hidrógeno y por eso se mezclan entre sí sin reaccionar. Tocá cada uno para ver el detalle.</p>
+    </div>
+    <div class="ings">
+
+      <details>
+        <summary><h3>Cera cosmética</h3><span class="role">Le da firmeza al labial</span></summary>
+        <div class="body">
+          <p>Es una mezcla de ésteres de ácidos grasos y alcoholes de cadena larga. Al calentarla se funde y deja que los demás ingredientes se repartan; al enfriarse vuelve a formar una estructura sólida que los mantiene unidos.</p>
+          <p>Su acción es física, no química: arma una matriz que sostiene la forma del producto y evita que quede líquido o se separe.</p>
+          <p class="used">Se usa en el labial.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Cera de abeja</h3><span class="role">Espesa el gloss y protege</span></summary>
+        <div class="body">
+          <span class="chem">CH<sub>3</sub>(CH<sub>2</sub>)<sub>14</sub>COO(CH<sub>2</sub>)<sub>29</sub>CH<sub>3</sub></span>
+          <p>De origen animal. Entre el 70 y el 75 % son ésteres cerosos; el principal es la miricina o palmitato de miricilo, que es la fórmula de arriba. Funde entre 62 y 65 °C.</p>
+          <p>Al enfriarse, sus cadenas largas forman una red cristalina sostenida por fuerzas de London que atrapa el aceite y la vitamina E. Sobre la piel deja una barrera que retiene la humedad.</p>
+          <p class="used">Se usa en el gloss.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Vaselina</h3><span class="role">Sella la humedad</span></summary>
+        <div class="body">
+          <span class="chem">C<sub>16</sub>H<sub>34</sub> (hexadecano, uno de sus componentes)</span>
+          <p>Es una mezcla purificada de hidrocarburos de origen mineral, por eso no tiene una única fórmula. Funciona como agente oclusivo: forma una capa sobre los labios que frena la evaporación del agua.</p>
+          <p>Es químicamente inerte y aporta la textura untuosa que hace que el labial se deslice.</p>
+          <p class="used">Se usa en el labial.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Aceite de coco</h3><span class="role">Suaviza y da cremosidad</span></summary>
+        <div class="body">
+          <span class="chem">C<sub>39</sub>H<sub>74</sub>O<sub>6</sub> (trilaurina)</span>
+          <p>Es una mezcla de triglicéridos ricos en ácido láurico. Funde cerca de los 24 °C, así que el labial se ablanda apenas toca los labios.</p>
+          <p>Actúa como emoliente: suaviza la piel y reduce la pérdida de humedad.</p>
+          <p class="used">Se usa en el labial.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Aceite de ricino</h3><span class="role">Da el brillo del gloss</span></summary>
+        <div class="body">
+          <span class="chem">C<sub>57</sub>H<sub>104</sub>O<sub>9</sub> (trirricinoleína)</span>
+          <p>Rico en ácido ricinoleico. Es espeso y brillante, y por eso es la base del gloss: forma una película que queda sobre los labios sin escurrirse.</p>
+          <p>También ayuda a que el color se reparta parejo al aplicarlo.</p>
+          <p class="used">Se usa en el gloss.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Vitamina E</h3><span class="role">Evita que los aceites se pongan rancios</span></summary>
+        <div class="body">
+          <span class="chem">C<sub>29</sub>H<sub>50</sub>O<sub>2</sub> (tocoferol)</span>
+          <p>Tiene un anillo de cromanol con un grupo –OH fenólico y una cadena de 16 carbonos que la hace soluble en grasas.</p>
+          <p>Con el calor o el aire, los lípidos forman radicales libres. La vitamina E los frena donando el hidrógeno de su grupo fenol; el radical que queda se estabiliza por resonancia y ya no reacciona. Así se protege el olor y se alarga la vida útil.</p>
+          <p class="used">Se usa en los dos productos.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Pigmento cosmético</h3><span class="role">Aporta el color</span></summary>
+        <div class="body">
+          <p>A diferencia de un colorante, el pigmento no se disuelve: queda disperso en la base grasa, y por eso hay que agitar bien para que el color sea uniforme. Usamos un pigmento rosado apto para labios.</p>
+          <p class="used">Se usa en los dos productos.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Esencia de cereza</h3><span class="role">Aporta el aroma</span></summary>
+        <div class="body">
+          <p>Es una esencia oleosa, así que se mezcla por completo con la fase grasa. No da color ni hidratación: mejora la experiencia de uso.</p>
+          <p class="used">Se usa en los dos productos.</p>
+        </div>
+      </details>
+
+    </div>
+    <p class="note">¿Y las bacterias? Los dos productos son anhidros, es decir, no tienen agua libre. Sin agua, microorganismos como <i>Staphylococcus aureus</i> o <i>Candida albicans</i> no pueden multiplicarse. Igual trabajamos con Buenas Prácticas de Laboratorio para no contaminarlos durante la elaboración.</p>
+  </div>
+</section>
+
+<section class="band band-paper" id="proceso">
+  <div class="wrap">
+    <div class="head">
+      <h2>Cómo los hicimos</h2>
+      <p>Seis pasos, los mismos que sigue la industria, adaptados a la mesada de la escuela.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <div>
+          <h3>Bioseguridad y desinfección</h3>
+          <p>Trabajamos con guardapolvo, guantes, barbijo y cofia. Limpiamos la mesada con alcohol al 70 % y desinfectamos el material de vidrio, las espátulas, las jeringas y los envases.</p>
+          <p>Los dejamos evaporar sobre papel limpio y secamos el interior de cada envase con hisopos descartables.</p>
+        </div>
+        <div class="shots">
+          <figure><img loading="lazy" src="img/materiales.jpg" width="900" height="1200" alt="Insumos y materiales desinfectados sobre papel: cera de abeja, aceite de ricino, vaselina, aceite de coco, cera cosmética, espátulas y jeringa"><figcaption>Materiales e insumos</figcaption></figure>
+          <figure><img loading="lazy" src="img/envases.jpg" width="900" height="1200" alt="Envases de labial y tubos de gloss boca abajo sobre papel absorbente"><figcaption>Envases secándose</figcaption></figure>
+          <figure><img loading="lazy" src="img/hisopo.jpg" width="900" height="1200" alt="Manos con guantes secando el interior de un envase con un hisopo"><figcaption>Secado con hisopo</figcaption></figure>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Pesado</h3>
+          <p>Taramos el vaso de precipitados en la balanza y pesamos cada ingrediente de la fase grasa: cera, vaselina, aceite de coco y pigmento para el labial; cera de abeja y aceite de ricino para el gloss, en un vaso aparte.</p>
+        </div>
+        <div class="shots">
+          <figure><img loading="lazy" src="img/balanza.jpg" width="898" height="1064" alt="Balanza de laboratorio y una mano con guante cortando cera de abeja"><figcaption>Pesado de la cera de abeja</figcaption></figure>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Fusión a baño maría</h3>
+          <p>Calentamos los dos vasos a baño maría entre 65 y 70 °C, por encima del punto de fusión de las ceras, y revolvimos con varilla de vidrio hasta tener un líquido uniforme.</p>
+        </div>
+        <div class="shots">
+          <figure><img loading="lazy" src="img/banio-cera.jpg" width="900" height="1200" alt="Vaso de precipitados con cera cosmética en escamas dentro de un cristalizador con agua"><figcaption>La cera empieza a fundirse</figcaption></figure>
+          <figure><img loading="lazy" src="img/fusion-pigmento.jpg" width="900" height="1200" alt="Una alumna observa de cerca la mezcla rosada fundida a baño maría"><figcaption>Mezcla fundida con pigmento</figcaption></figure>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Vitamina E y esencia</h3>
+          <p>Estos dos ingredientes se dañan con el calor. Sacamos los vasos del baño, controlamos con termómetro que la mezcla bajara a 40–45 °C y recién ahí los agregamos, agitando suavemente durante un minuto.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Moldeo en caliente</h3>
+          <p>Con la mezcla todavía fluida cargamos jeringas de 5 ml sin aguja y llenamos los envases desde el fondo hacia arriba, para que no queden burbujas de aire.</p>
+        </div>
+        <div class="shots">
+          <figure><img loading="lazy" src="img/moldeo.jpg" width="900" height="1200" alt="Dos alumnas con cofia y guantes llenando un tubo de gloss con una jeringa"><figcaption>Llenado con jeringa</figcaption></figure>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Solidificación y control</h3>
+          <p>Dejamos reposar los envases 20 minutos a temperatura ambiente. Después revisamos la consistencia, que el color fuera parejo y que la superficie quedara lisa, y los tapamos.</p>
+          <p>Resultado: 20 labiales de 5 g y 20 glosses de 1,2 ml.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="band band-plum" id="ensayos">
+  <div class="wrap">
+    <div class="head">
+      <h2>Qué medimos</h2>
+      <p>Además de fabricarlos, pusimos a prueba los productos con las técnicas que aprendimos en el laboratorio.</p>
+    </div>
+
+    <div class="ph">
+      <h3>pH con tira indicadora</h3>
+      <div class="ph-scale" role="img" aria-label="Escala de pH del 1 al 14. El gloss dio pH 4, el labial pH 7 y la piel está entre 4,5 y 5,5.">
+        <div class="mark up" style="left:25%"><b>Gloss</b>pH 4</div>
+        <div class="mark up" style="left:46.43%"><b>Labial</b>pH 7</div>
+        <div class="ph-strip" aria-hidden="true">
+          <i style="background:#E0786C">1</i><i style="background:#EE9A5E">2</i><i style="background:#E79B48">3</i><i class="d" style="background:#F2B03A">4</i><i class="d" style="background:#F6C21C">5</i><i class="d" style="background:#F6D61E">6</i><i class="d" style="background:#C7C52A">7</i><i style="background:#93AB38">8</i><i style="background:#5C8C35">9</i><i style="background:#3D783A">10</i><i style="background:#2F3668">11</i><i style="background:#4C4888">12</i><i style="background:#5A4484">13</i><i style="background:#3E3E78">14</i>
+        </div>
+        <div class="skin" aria-hidden="true"><span>Piel: 4,5 a 5,5</span></div>
+      </div>
+      <p>El gloss dio un valor ácido, cercano al de la piel. El labial dio neutro. Como los dos son mezclas de grasas sin agua, no tienen un pH que se pueda medir de forma directa: el resultado depende de cómo se prepara la muestra, y por eso lo tomamos como una referencia.</p>
+    </div>
+
+    <div class="results">
+      <div class="res">
+        <div class="big">70 °C</div>
+        <h3>Punto de fusión del labial</h3>
+        <p>Medido con tubo de Thiele: un capilar con la muestra, atado al termómetro y sumergido en glicerina que se calienta de a poco.</p>
+      </div>
+      <div class="res">
+        <div class="big">Sin fusión</div>
+        <h3>El gloss no se funde</h3>
+        <p>A temperatura ambiente ya es un líquido viscoso, así que no tiene punto de fusión para medir. Su propiedad característica es la viscosidad.</p>
+      </div>
+      <div class="res">
+        <div class="big">Fluidez media</div>
+        <h3>Viscosidad comparada</h3>
+        <p>No teníamos muestra suficiente para el viscosímetro, así que comparamos cómo escurre frente a la vaselina líquida: se comportó de forma parecida.</p>
+      </div>
+    </div>
+
+    <div class="shots">
+      <figure><img loading="lazy" src="img/ph.jpg" width="900" height="1200" alt="Dos tiras de pH usadas junto a la escala de colores de referencia"><figcaption>Tiras de pH contra la escala</figcaption></figure>
+      <figure><img loading="lazy" src="img/thiele.jpg" width="900" height="1200" alt="Tubo de Thiele con glicerina sujeto a un pie universal, con termómetro y mechero encendido"><figcaption>Tubo de Thiele</figcaption></figure>
+      <figure><img loading="lazy" src="img/fusion-gloss.jpg" width="900" height="1200" alt="Termómetro con capilar sumergido en un cristalizador con agua"><figcaption>Ensayo de fusión del gloss</figcaption></figure>
+    </div>
+    <p class="note" style="color:#E7CFD3">Ninguno de los dos tiene punto de ebullición definido: son mezclas de moléculas grandes que se descomponen antes de hervir.</p>
+  </div>
+</section>
+
+<section class="band" id="aprendizajes">
+  <div class="wrap">
+    <div class="head">
+      <h2>Lo que no salió a la primera</h2>
+      <p>Las fórmulas finales salieron de corregir errores. Estos fueron los tres cambios más importantes.</p>
+    </div>
+    <div class="turns">
+      <article class="turn">
+        <h3>La remolacha no tiñó</h3>
+        <p>Secamos remolacha en el horno, la molimos y la mezclamos con aceite de coco. El labial quedó incoloro.</p>
+        <p>La betanina, su pigmento, es polar, y la base del labial es apolar: no se mezclan.</p>
+        <p class="fix">La reemplazamos por pigmento cosmético rosado.</p>
+      </article>
+      <article class="turn">
+        <h3>La frutilla olía a alcohol</h3>
+        <p>Intentamos extraer el aroma de frutilla con alcohol etílico, pero el olor del etanol tapó al de la fruta.</p>
+        <p class="fix">Usamos una esencia oleosa de cereza, que se mezcla por completo con las grasas.</p>
+      </article>
+      <article class="turn">
+        <h3>Texturas al revés</h3>
+        <p>El primer labial salió demasiado blando y el primer gloss, demasiado duro. Al labial le faltaba cera y al gloss le sobraba.</p>
+        <p class="fix">Ajustamos las proporciones hasta llegar a las fórmulas de esta página.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band band-paper" id="normativa">
+  <div class="wrap">
+    <div class="head">
+      <h2>¿Se podrían vender?</h2>
+      <p>Todavía no. Son productos escolares, hechos para aprender. En Argentina, la ANMAT exige varios pasos antes de que un cosmético llegue al público (disposiciones 155/98 y 6433/15).</p>
+    </div>
+    <ul class="reqs">
+      <li><b>Establecimiento habilitado</b>Planta autorizada y auditada, con áreas limpias y un profesional matriculado como director técnico.</li>
+      <li><b>Registro de la fórmula</b>Cada producto necesita un legajo técnico aprobado e inscripto antes de distribuirse.</li>
+      <li><b>Seguridad dermatológica</b>Ensayos de irritación y sensibilidad en laboratorios acreditados.</li>
+      <li><b>Estabilidad y vida útil</b>Pruebas microbiológicas y fisicoquímicas a 6 y 12 meses para fijar la fecha de vencimiento.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="equipo">
+  <div class="wrap">
+    <div class="head">
+      <h2>Lo que nos llevamos</h2>
+    </div>
+    <p class="lead">Pudimos aplicar lo aprendido en los dos años de la especialización en química y entender cómo interviene en algo tan cotidiano como un labial.</p>
+    <p>Aprendimos que el resultado no siempre sale en el primer intento, y que observar, medir y corregir es parte del trabajo. A futuro nos gustaría estudiar la estabilidad de los productos a largo plazo y medir sus propiedades físicas con más precisión.</p>
+
+    <div class="people" style="margin-top:3rem">
+      <div>
+        <h3>Hicimos este proyecto</h3>
+        <ul>
+          <li>Daiana Ferreira</li>
+          <li>Sofía Capiguara</li>
+          <li>Rosario Pazos</li>
+          <li>Abigail Coria</li>
+        </ul>
+      </div>
+      <div class="tut">
+        <h3>Docentes tutores</h3>
+        <ul>
+          <li>Agustina Cayunao</li>
+          <li>Karina Vargas</li>
+          <li>Luis Rojas</li>
+          <li>Carolina Paz</li>
+          <li>Chiara De Vincenzi</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="refs">
+      Fuentes consultadas
+      <ul>
+        <li>Lab-Ferrer. <a href="https://lab-ferrer.com/productos-cosmeticos-y-bacterias">Productos cosméticos y bacterias</a>.</li>
+        <li>PMC, National Library of Medicine. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4976416">Artículo científico PMC4976416</a>.</li>
+        <li>Reina Kilama. <a href="https://reinakilama.com/los-beneficios-de-la-cera-de-abeja-para-la-piel">Los beneficios de la cera de abeja para la piel</a>.</li>
+        <li>Tigoo. <a href="https://tigoo.com/es/lexikon/kosmetiska-pigment">Pigmentos cosméticos</a>.</li>
+        <li>Cosmos Online. Información técnica de los pigmentos cosméticos.</li>
+        <li>Reutter. Ficha técnica de alcohol desnaturalizado 70.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Química en los labios. Proyecto de Expotec 2026, CET N.º 12.</p>
+  </div>
+</footer>
+
+<script>
+/* DATOS DE LAS FÓRMULAS: para corregir un valor, cambiar solo el porcentaje (pct). Los gramos se calculan solos. */
+const FORMULAS = {
+  labial: {
+    titulo: "Labial",
+    sub: "Sólido, en barra. 20 envases de 5 g.",
+    lote: 120, unidad: 5,
+    items: [
+      ["Vaselina", 45, "#F6C9C0"],
+      ["Aceite de coco", 37, "#F1A39A"],
+      ["Cera cosmética", 15, "#E9675F"],
+      ["Pigmento cosmético", 1, "#B23A54"],
+      ["Vitamina E", 1, "#F2A03D"],
+      ["Esencia de cereza", 1, "#1F3A63"]
+    ]
+  },
+  gloss: {
+    titulo: "Gloss",
+    sub: "Fluido y brillante. 20 tubos de 1,2 ml.",
+    lote: 30, unidad: 1.2,
+    items: [
+      ["Aceite de ricino", 93, "#F6C27A"],
+      ["Cera de abeja", 3, "#C98A2B"],
+      ["Pigmento cosmético", 2, "#B23A54"],
+      ["Vitamina E", 1, "#F2A03D"],
+      ["Esencia de cereza", 1, "#1F3A63"]
+    ]
+  }
+};
+const fmt = (n, d) => n.toLocaleString("es-AR", {minimumFractionDigits: d, maximumFractionDigits: d});
+for (const [id, f] of Object.entries(FORMULAS)) {
+  const el = document.getElementById("f-" + id);
+  const dec = f.unidad < 2 ? 3 : 2;
+  const total = f.items.reduce((s, i) => s + i[1], 0);
+  el.innerHTML =
+    `<h3>${f.titulo}</h3><p class="sub">${f.sub}</p>` +
+    `<div class="bar" role="img" aria-label="Composición del ${f.titulo.toLowerCase()}: ${f.items.map(i => i[0] + " " + i[1] + " %").join(", ")}">` +
+    f.items.map(i => `<i style="flex:${i[1]} 0 0;background:${i[2]}"></i>`).join("") + `</div>` +
+    `<table class="tbl"><thead><tr><th>Ingrediente</th><th>%</th><th>Lote (g)</th><th>Por unidad (g)</th></tr></thead><tbody>` +
+    f.items.map(i => `<tr><td><span class="dot" style="background:${i[2]}"></span>${i[0]}</td><td>${i[1]}</td><td>${fmt(i[1] * f.lote / 100, 1)}</td><td>${fmt(i[1] * f.unidad / 100, dec)}</td></tr>`).join("") +
+    `</tbody><tfoot><tr><td>Total</td><td>${total}</td><td>${fmt(f.lote, 1)}</td><td>${fmt(f.unidad, dec)}</td></tr></tfoot></table>`;
+}
+</script>
+</body>
+</html>
