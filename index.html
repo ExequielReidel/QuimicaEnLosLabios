@@ -31,8 +31,8 @@
   --wrap:68rem;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--blush);color:var(--plum);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;overflow-x:clip;background:var(--blush);color:var(--plum);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
 img{display:block;max-width:100%;height:auto}
 h1,h2,h3{font-family:var(--display);line-height:1.02;margin:0;letter-spacing:-.02em}
 h2{font-size:clamp(2.1rem,7vw,3.6rem);font-weight:800;max-width:16ch}
@@ -183,11 +183,63 @@ footer p{margin:0}
   .people{grid-template-columns:1fr 1fr}
   .ph-strip i{height:3.6rem;font-size:.95rem}
 }
+
+/* Movimiento */
+.progress{position:fixed;top:0;left:0;height:4px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--coral),var(--amber));z-index:10}
+.hero{position:relative}
+.bubbles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.bubbles i{position:absolute;bottom:-12%;border-radius:50%;border:2px solid var(--rose);opacity:.35;background:radial-gradient(circle at 30% 30%,#fff 0 12%,rgba(255,255,255,0) 45%)}
+.hero .wrap{position:relative}
+.ticker{background:var(--plum);color:var(--blush);overflow:hidden;padding:1.1rem 0;transform:rotate(-1.5deg) scale(1.03);margin:-1.2rem 0 -1.2rem;position:relative;z-index:2}
+.ticker div{display:flex;width:max-content;gap:2.5rem;font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,5vw,2.4rem);letter-spacing:-.02em;white-space:nowrap}
+.ticker span{display:flex;align-items:center;gap:2.5rem}
+.ticker span::after{content:"";width:.6em;height:.6em;border-radius:50%;background:var(--coral)}
+.ticker span:nth-child(even)::after{background:var(--amber)}
+figure img{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+figure:hover img{transform:scale(1.03) rotate(-1.2deg)}
+.turn{transition:transform .25s}
+.turn:hover{transform:translateY(-6px)}
+.ings summary h3{transition:color .2s,transform .2s}
+.ings summary:hover h3{color:var(--coral);transform:translateX(6px)}
+@media (prefers-reduced-motion:no-preference){
+  .bubbles i{animation:sube linear infinite}
+  @keyframes sube{to{transform:translateY(-120vh) translateX(var(--x,20px))}}
+  .ticker div{animation:corre 28s linear infinite}
+  @keyframes corre{to{transform:translateX(-50%)}}
+  .bullet .seal{animation:flota 5s ease-in-out infinite}
+  @keyframes flota{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-3deg) translateY(-10px)}}
+  .js [data-r]{opacity:0;transform:translateY(34px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0ms)}
+  .js [data-r="izq"]{transform:translateX(-46px)}
+  .js [data-r="der"]{transform:translateX(46px)}
+  .js [data-r="zoom"]{transform:scale(.86) rotate(-3deg)}
+  .js [data-r="giro"]{transform:translateY(40px) rotate(4deg)}
+  .js [data-r].in{opacity:1;transform:none}
+  .js h2[data-r]{clip-path:inset(0 0 100% 0);transform:translateY(40px);opacity:1;transition:clip-path .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+  .js h2[data-r].in{clip-path:inset(-10% 0 -20% 0)}
+  .js .bar i{transform:scaleX(0);transform-origin:0 50%;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+  .js .formula.in .bar i{transform:none}
+  .js .bar i:nth-child(2){transition-delay:.15s}.js .bar i:nth-child(3){transition-delay:.3s}.js .bar i:nth-child(4){transition-delay:.45s}.js .bar i:nth-child(5){transition-delay:.55s}.js .bar i:nth-child(6){transition-delay:.65s}
+  .js .tbl tbody tr{opacity:0;transform:translateX(-14px);transition:opacity .5s,transform .5s}
+  .js .formula.in .tbl tbody tr{opacity:1;transform:none}
+  .js .tbl tbody tr:nth-child(1){transition-delay:.3s}.js .tbl tbody tr:nth-child(2){transition-delay:.4s}.js .tbl tbody tr:nth-child(3){transition-delay:.5s}.js .tbl tbody tr:nth-child(4){transition-delay:.6s}.js .tbl tbody tr:nth-child(5){transition-delay:.7s}.js .tbl tbody tr:nth-child(6){transition-delay:.8s}
+  .js .ph-strip i{transform:scaleY(0);transform-origin:50% 100%;transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+  .js .ph.in .ph-strip i{transform:none}
+  .js .mark,.js .skin{opacity:0;transition:opacity .4s 1.1s,transform .6s 1.1s cubic-bezier(.3,1.6,.5,1)}
+  .js .mark{transform:translateX(-50%) translateY(-18px)}
+  .js .ph.in .mark{opacity:1;transform:translateX(-50%)}
+  .js .ph.in .skin{opacity:1}
+  .js .steps h3::before{display:inline-block;transform:scale(0) rotate(-30deg);transition:transform .6s .15s cubic-bezier(.3,1.6,.5,1)}
+  .js .steps h3::before{display:block;transform-origin:0 100%}
+  .js .steps [data-r].in h3::before{transform:none}
+  .ings details[open] .body{animation:abre .35s ease-out}
+  @keyframes abre{from{opacity:0;transform:translateY(-8px)}}
+}
 @media print{.top{display:none}.band{padding:2rem 0}}
 </style>
 </head>
 <body>
 
+<div class="progress" aria-hidden="true"></div>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#inicio"><img src="img/icono.png" width="32" height="32" alt=""><span>Química en los labios</span></a>
@@ -204,6 +256,7 @@ footer p{margin:0}
 <main id="inicio">
 
 <section class="hero">
+  <div class="bubbles" aria-hidden="true"></div>
   <div class="wrap">
     <div>
       <h1><span>Química</span><span class="en">en los</span><span>labios</span></h1>
@@ -220,6 +273,8 @@ footer p{margin:0}
     </div>
   </div>
 </section>
+
+<div class="ticker" aria-hidden="true"><div><span>cera de abeja</span><span>aceite de ricino</span><span>vaselina</span><span>aceite de coco</span><span>vitamina E</span><span>cera cosmética</span><span>pigmento</span><span>esencia de cereza</span><span>cera de abeja</span><span>aceite de ricino</span><span>vaselina</span><span>aceite de coco</span><span>vitamina E</span><span>cera cosmética</span><span>pigmento</span><span>esencia de cereza</span></div></div>
 
 <section class="band band-paper" id="proyecto">
   <div class="wrap">
@@ -426,7 +481,7 @@ footer p{margin:0}
 
     <div class="results">
       <div class="res">
-        <div class="big">70 °C</div>
+        <div class="big"><span data-count="70">70</span> °C</div>
         <h3>Punto de fusión del labial</h3>
         <p>Medido con tubo de Thiele: un capilar con la muestra, atado al termómetro y sumergido en glicerina que se calienta de a poco.</p>
       </div>
@@ -587,6 +642,51 @@ for (const [id, f] of Object.entries(FORMULAS)) {
     f.items.map(i => `<tr><td><span class="dot" style="background:${i[2]}"></span>${i[0]}</td><td>${i[1]}</td><td>${fmt(i[1] * f.lote / 100, 1)}</td><td>${fmt(i[1] * f.unidad / 100, dec)}</td></tr>`).join("") +
     `</tbody><tfoot><tr><td>Total</td><td>${total}</td><td>${fmt(f.lote, 1)}</td><td>${fmt(f.unidad, dec)}</td></tr></tfoot></table>`;
 }
+
+/* Movimiento al bajar */
+(() => {
+  const root = document.documentElement;
+  const bar = document.querySelector(".progress");
+  const onScroll = () => { const h = root.scrollHeight - innerHeight; bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`; };
+  addEventListener("scroll", onScroll, {passive: true}); onScroll();
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  const bub = document.querySelector(".bubbles");
+  for (let n = 0; n < 14; n++) {
+    const b = document.createElement("i"), size = 14 + Math.random() * 54;
+    b.style.cssText = `left:${Math.random() * 100}%;width:${size}px;height:${size}px;animation-duration:${9 + Math.random() * 12}s;animation-delay:${-Math.random() * 18}s;--x:${(Math.random() * 80 - 40).toFixed(0)}px`;
+    bub.appendChild(b);
+  }
+  root.classList.add("js");
+  const set = (sel, kind, step = 90) => document.querySelectorAll(sel).forEach(el => {
+    const sib = [...el.parentElement.children].filter(c => c.matches(sel.split(",").map(x => x.trim().split(" ").pop()).join(",")));
+    el.dataset.r = typeof kind === "function" ? kind(el, sib.indexOf(el)) : kind;
+    el.style.setProperty("--d", Math.max(0, sib.indexOf(el)) * step + "ms");
+  });
+  set(".band h2", "sube", 0);
+  set(".head p, .band .wrap > p, .refs", "sube", 0);
+  set(".goals li", (e, i) => i % 2 ? "der" : "izq", 80);
+  set(".formula", (e, i) => i ? "der" : "izq", 150);
+  set(".ings details", "izq", 60);
+  set(".steps > li > div:first-child", "izq", 0);
+  set(".shots figure", (e, i) => i % 2 ? "giro" : "zoom", 130);
+  set(".ph", "sube", 0);
+  set(".res", "sube", 140);
+  set(".turn", "giro", 140);
+  set(".reqs li", "izq", 100);
+  set(".people > div", "sube", 150);
+  document.querySelectorAll(".ph-strip i").forEach((c, i) => c.style.transitionDelay = i * 55 + "ms");
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    (watch.get(e.target) || [e.target]).forEach(x => x.classList.add("in")); io.unobserve(e.target);
+    e.target.querySelectorAll("[data-count]").forEach(c => {
+      const end = +c.dataset.count, t0 = performance.now();
+      const tick = t => { const k = Math.min(1, (t - t0) / 1400); c.textContent = Math.round(end * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+    });
+  }), {threshold: .12, rootMargin: "0px 0px -7% 0px"});
+  const watch = new Map();
+  document.querySelectorAll("[data-r]").forEach(el => { const t = el.tagName === "H2" ? el.parentElement : el; if (!watch.has(t)) watch.set(t, []); watch.get(t).push(el); io.observe(t); });
+})();
 </script>
 </body>
 </html>
